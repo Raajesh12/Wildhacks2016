@@ -25,28 +25,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:text="Order Number"
+        android:text="Order #"
         android:ems="10"
         android:layout_below="@+id/nameField"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="30dp"
-        android:id="@+id/orderNumberField" />
+        android:id="@+id/orderNumberField"
+        android:maxLength="7"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number|numberDecimal"
-        android:text="time"
+        android:text="Time"
         android:ems="10"
         android:layout_below="@+id/orderNumberField"
         android:layout_alignRight="@+id/orderNumberField"
         android:layout_alignEnd="@+id/orderNumberField"
         android:layout_marginTop="44dp"
-        android:id="@+id/inputTimeField" />
+        android:id="@+id/inputTimeField"
+        android:maxLength="4"/>
 
     <Button
-        android:text="Button"
+        android:text="Submit"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_below="@+id/inputTimeField"

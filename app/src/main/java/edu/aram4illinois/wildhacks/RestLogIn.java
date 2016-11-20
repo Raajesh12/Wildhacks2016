@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class RestLogIn extends AppCompatActivity {
     EditText emailEditText;
     EditText passEditText;
@@ -42,7 +44,9 @@ public class RestLogIn extends AppCompatActivity {
                 String emailAddress = emailEditText.getText().toString();
                 String password = passEditText.getText().toString();
                 if(emailAddress.equals("john@papajohns.com") && password.equals("papa")){
+                    ArrayList<Order> orders = new ArrayList<>();
                     Intent intent = new Intent(v.getContext(), RestList.class);
+                    intent.putExtra("orderList", orders);
                     startActivity(intent);
                     emailEditText.getText().clear();
                     passEditText.getText().clear();

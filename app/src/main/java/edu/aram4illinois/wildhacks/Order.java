@@ -10,14 +10,23 @@ import java.io.Serializable;
 
 public class Order implements Serializable {
     private String name;
-    private String mealName;
+    private String displayName;
+    private int orderNumber;
     private double estimatedTime;
 
-    public Order(String name, String mealName, double estimatedTime) {
+    public Order(String name, int aNumber, double estimatedTime) {
         this.name = name;
-        this.mealName = mealName;
+        if(name.length() >= 10)
+            this.displayName = name.substring(0, 10);
+        else
+            this.displayName = name;
+        this.orderNumber = aNumber;
         this.estimatedTime = estimatedTime;
     }
+
+    public String getDisplayName(){return displayName;}
+
+    public void setDisplayName(String aDisplayName){this.displayName = aDisplayName;}
 
     public String getName() {
         return name;
@@ -27,12 +36,12 @@ public class Order implements Serializable {
         this.name = name;
     }
 
-    public String getMealName() {
-        return mealName;
+    public int getOrderNumber() {
+        return orderNumber;
     }
 
-    public void setMealName(String mealName) {
-        this.mealName = mealName;
+    public void setOrderNumber(int aNumber) {
+        this.orderNumber = aNumber;
     }
 
     public void setEstimatedTime(double estimatedTime) {
@@ -47,7 +56,7 @@ public class Order implements Serializable {
     public String toString() {
         return "Order{" +
                 "name='" + name + '\'' +
-                ", mealName='" + mealName + '\'' +
+                ", orderNumber='" + orderNumber + '\'' +
                 ", estimatedTime=" + estimatedTime +
                 '}';
     }

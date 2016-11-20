@@ -55,8 +55,8 @@ public class CustomAdapter extends BaseAdapter {
         TextView timeText = (TextView) vi.findViewById(R.id.timeTextView);
 
         Order currOrder = data.get(position);
-        nameText.setText(currOrder.getName());
-        orderText.setText(currOrder.getMealName());
+        nameText.setText(currOrder.getDisplayName());
+        orderText.setText(Integer.toString(currOrder.getOrderNumber()));
         timeText.setText(Double.toString(currOrder.getEstimatedTime()));
 
         return vi;

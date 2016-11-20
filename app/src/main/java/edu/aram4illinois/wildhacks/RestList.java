@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import java.util.ArrayList;
@@ -11,27 +12,46 @@ import java.util.ArrayList;
 public class RestList extends AppCompatActivity {
     ListView listview;
     ImageView plus;
-    ArrayList<Order> data = new ArrayList<Order>();
+    ImageView redX;
+    ArrayList<Order> data;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rest_list);
+
+        Intent intent = this.getIntent();
+        data = (ArrayList<Order>) intent.getSerializableExtra("orderList");
+        listview = (ListView) findViewById(R.id.waitlist);
         plus = (ImageView) findViewById(R.id.imageView);
+        //redX = (ImageView) findViewById(R.id.redX);
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), CustomerForm.class);
+                intent.putExtra("orderList", data);
                 startActivity(intent);
             }
         });
-        Intent intent = this.getIntent();
-        Order order = (Order) intent.getSerializableExtra("order");
 
-        data.add(new Order("Papa John", "Extra Large Pizza", 10.0));
-        data.add(new Order("Achintya", "Dosai", 60.0));
-        data.add(new Order("Raajesh", "Sambar", 80.0));
+        /*redX.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                data.remove(0);
+                listview.invalidateViews();
+            }
+        });*/
+
+        /*Order order = (Order) intent.getSerializableExtra("order");
         if (order != null)
-            data.add(order);
-        listview = (ListView) findViewById(R.id.waitlist);
+            data.add(order);*/
+
         listview.setAdapter(new CustomAdapter(this, data));
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                data.remove(position);
+                listview.invalidateViews();
+            }
+        });
     }
 }

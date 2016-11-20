@@ -16,7 +16,9 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:id="@+id/waitlist" />
+        android:id="@+id/waitlist"
+        android:paddingTop="15dp"
+        android:paddingRight="10dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -29,5 +31,15 @@
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="24dp"
         android:id="@+id/imageView"
-        android:translationY="-430dp" />
+        android:translationY="-430dp"
+        android:translationX="25dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/waitlist"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true" />
 </RelativeLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
@@ -31,5 +32,18 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="42dp"
         android:layout_marginEnd="42dp"
-        android:id="@+id/timeTextView" />
+        android:id="@+id/timeTextView"
+        android:translationX="-15dp" />
+
+    <ImageView
+        android:layout_height="20dp"
+        app:srcCompat="@mipmap/red_x"
+        android:layout_alignTop="@+id/timeTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp"
+        android:id="@+id/redX"
+        android:layout_width="20dp"
+        android:translationY="-3dp" />
 </RelativeLayout>
