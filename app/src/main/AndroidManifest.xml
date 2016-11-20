@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RestLogIn" />
-        <activity android:name=".RestList"></activity>
+        <activity android:name=".RestList" />
+        <activity android:name=".CustomerForm"></activity>
     </application>
 
 </manifest>
