@@ -48,7 +48,12 @@ public class CustomerForm extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String nameStr = name.getText().toString();
+                String numberStr = number.getText().toString();
+                double expectedTime = Double.parseDouble(number.getText().toString());
+                Order tempOrder = new Order(nameStr, numberStr, expectedTime);
                 Intent intent = new Intent(v.getContext(), RestList.class);
+                intent.putExtra("order", tempOrder);
                 startActivity(intent);
             }
         });

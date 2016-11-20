@@ -7,16 +7,18 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by Raajesh on 11/19/2016.
  */
 
 public class CustomAdapter extends BaseAdapter {
     Context context;
-    Order[] data;
+    ArrayList<Order> data;
     private static LayoutInflater inflater = null;
 
-    public CustomAdapter(Context context, Order[] data) {
+    public CustomAdapter(Context context, ArrayList<Order> data) {
         // TODO Auto-generated constructor stub
         this.context = context;
         this.data = data;
@@ -27,13 +29,13 @@ public class CustomAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return data.length;
+        return data.size();
     }
 
     @Override
     public Object getItem(int position) {
         // TODO Auto-generated method stub
-        return data[position];
+        return data.get(position);
     }
 
     @Override
@@ -52,7 +54,7 @@ public class CustomAdapter extends BaseAdapter {
         TextView orderText = (TextView) vi.findViewById(R.id.orderTextView);
         TextView timeText = (TextView) vi.findViewById(R.id.timeTextView);
 
-        Order currOrder = data[position];
+        Order currOrder = data.get(position);
         nameText.setText(currOrder.getName());
         orderText.setText(currOrder.getMealName());
         timeText.setText(Double.toString(currOrder.getEstimatedTime()));

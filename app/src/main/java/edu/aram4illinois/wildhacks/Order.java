@@ -1,10 +1,14 @@
 package edu.aram4illinois.wildhacks;
 
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 /**
  * Created by Abdul on 11/19/16.
  */
 
-public class Order {
+public class Order implements Serializable {
     private String name;
     private String mealName;
     private double estimatedTime;
