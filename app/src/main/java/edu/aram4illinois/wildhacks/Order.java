@@ -1,5 +1,6 @@
 package edu.aram4illinois.wildhacks;
 
+import android.os.CountDownTimer;
 import android.os.Parcelable;
 
 import java.io.Serializable;
@@ -16,7 +17,7 @@ public class Order implements Serializable {
 
     public Order(String name, int aNumber, double estimatedTime) {
         this.name = name;
-        if(name.length() >= 10)
+        if (name.length() >= 10)
             this.displayName = name.substring(0, 10);
         else
             this.displayName = name;

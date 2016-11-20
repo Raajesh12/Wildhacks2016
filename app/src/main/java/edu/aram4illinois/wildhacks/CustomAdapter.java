@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -57,7 +58,8 @@ public class CustomAdapter extends BaseAdapter {
         Order currOrder = data.get(position);
         nameText.setText(currOrder.getDisplayName());
         orderText.setText(Integer.toString(currOrder.getOrderNumber()));
-        timeText.setText(Double.toString(currOrder.getEstimatedTime()));
+        DecimalFormat df = new DecimalFormat("#.00");
+        timeText.setText(df.format(currOrder.getEstimatedTime()));
 
         return vi;
     }

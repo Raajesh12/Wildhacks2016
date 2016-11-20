@@ -55,7 +55,7 @@ public class CustomerForm extends AppCompatActivity {
             public void onClick(View v) {
                 String nameStr = name.getText().toString();
                 int numberStr = Integer.parseInt(number.getText().toString());
-                double expectedTime = Double.parseDouble(number.getText().toString());
+                double expectedTime = Double.parseDouble(time.getText().toString());
                 Order tempOrder = new Order(nameStr, numberStr, expectedTime);
                 data.add(tempOrder);
                 Intent intent = new Intent(v.getContext(), RestList.class);
