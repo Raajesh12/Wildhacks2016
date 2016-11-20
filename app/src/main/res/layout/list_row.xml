@@ -41,8 +41,7 @@
         android:layout_alignTop="@+id/timeTextView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="14dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginRight="0dp"
         android:id="@+id/redX"
         android:layout_width="20dp"
         android:translationY="-3dp" />

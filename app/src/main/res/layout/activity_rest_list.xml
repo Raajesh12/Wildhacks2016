@@ -18,7 +18,8 @@
         android:layout_width="match_parent"
         android:id="@+id/waitlist"
         android:paddingTop="15dp"
-        android:paddingRight="10dp" />
+        android:paddingRight="0dp"
+        android:layout_marginTop="30dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -35,11 +36,47 @@
         android:translationX="25dp" />
 
     <TextView
-        android:text="TextView"
-        android:layout_width="fill_parent"
-        android:gravity="center_horizontal"
+        android:text="@string/name"
+        android:layout_width="wrap_content"
+        android:textSize="16dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="104dp"
+        android:layout_marginStart="104dp"
+        android:id="@+id/nameHeader"
+        android:translationX="-65dp"
+        android:translationY="15dp"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:text="@string/orderNumber"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/waitlist"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp"
+        android:id="@+id/orderNumber"
+        android:translationY="15dp"
+        android:translationX="-105dp"
+        android:textSize="16dp"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:text="@string/estimatedTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp"
+        android:id="@+id/timeView"
+        android:translationX="180dp"
+        android:translationY="15dp"
+        android:textSize="16dp"
+        android:layout_marginTop="15dp" />
+
 </RelativeLayout>

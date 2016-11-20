@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Wildhacks</string>
+    <string name="name"><u>Name</u></string>
+    <string name="orderNumber"><u>Order #</u></string>
+    <string name="estimatedTime"><u>Est. Time</u></string>
 </resources>
